@@ -1,0 +1,32 @@
+ConfigParser模块
+config = ConfigParser.ConfigParser()
+______________________________________________________________
+读取ini文件
+config.read(file)
+______________________________________________________________
+获取：
+获取值
+config.get(section, '字段')
+
+获取所有sections，返回列表
+config.sections()
+
+以列表形式获取指定section的所有(key-value对)：
+config.items(section)
+
+以列表形式获取指定section的key
+config.options(section)
+______________________________________________________________
+修改
+section：为配置文件中[]的内容
+option：为配置文件中的key
+value：为可以对应的值
+
+修改值:
+config.set(section, option, value)
+
+添加section：
+config.add_section(section)
+
+保存：
+config.write(open(file), 'w')

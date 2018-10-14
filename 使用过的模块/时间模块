@@ -1,0 +1,32 @@
+1、时间模块
+time模块
+返回当前时间戳：
+time.time()
+
+以时间元组格式返回当前时间：
+time.localtime(arg1)：参数为空，返回当前时间
+
+返回格式化时间：
+time.asctime(arg1)：参数为空，返回当前时间
+
+
+格式化成2016-03-20 11:45:39形式
+time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+
+
+格式化成Sat Mar 28 22:24:24 2016形式
+time.strftime("%a %b %d %H:%M:%S %Y", time.localtime()) 
+
+将格式字符串转换为时间戳
+a = "Sat Mar 28 22:24:24 2016"
+print time.mktime(time.strptime(a,"%a %b %d %H:%M:%S %Y"))
+____________________________________________________________________
+2、datetime模块
+获取当前时间
+datetime.datetime.now()
+
+将字符串格式转换为时间格式：
+datetime.datetime.strptime('2018-9-20', '%Y-%m-%d')
+
+将时间格式转换为字符串
+datetime.datetime.strftime(datetime.datetime.now(), '%Y-%m-%d')

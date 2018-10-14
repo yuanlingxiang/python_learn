@@ -1,0 +1,8 @@
+1、hashlib模块
+将给定字符串转换为一串16进制数字
+
+用法:
+import hashlib
+md5 = hashlib.md5()  #创建实例
+md5.update('str1'.encode('utf8'))  #转换字符串
+print md5.hexdigest()#输出结果

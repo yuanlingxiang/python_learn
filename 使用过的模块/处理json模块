@@ -1,0 +1,11 @@
+json模块
+将python对象编码为json:
+json.dump(str1)
+
+
+将json解码为python对象
+json.load(jsonobj)
+
+
+
+

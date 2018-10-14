@@ -1,0 +1,86 @@
+1、字典间比较
+字典是比较：
+先比较长度
+在比较键
+在比较值
+
+2、限制条件
+字典中的键不能重复
+
+当连接两个有重复键的字典时，后面的键的值将会覆盖前面的键的值
+
+字典的键必须是可hash的，即是不变类型
+
+判断一个值是否是hash的，用hash（obj）,如果是返回一个值，不可hash则抛出异常
+
+字典键为什么需不可变?
+因为解释器调用根据字典键来调用哈希哈数，来计算对应值的存储位置
+
+元组作为键时，必须保证元组中的元素是不可变对象
+
+
+3、创建字典
+方法1：
+dict1 = {}
+
+方法2：接收一个列表或者元组，里面的每个元素一对值
+dict1 = dict(list1[, tuple])
+
+方法3：seq里面的参数作为字典的键值， arg2为值
+dict1 = dict.fromkeys(seq, arg2)
+
+4、访问字典元素
+通过键值访问
+
+迭代字典的键:
+for k in dict1:
+	print k
+
+迭代字典的值:
+for v in dict1.values():
+	print k
+
+迭代字典的元素:
+for k, v in dict1.items():
+	print k, v
+	
+	
+5、内建方法：
+获取值
+获取字典的值：返回键对应的值，不存在则返回默认值，可设置默认值
+dict1.get(key, default)
+dict1.setdefault(key, default)
+
+返回由字典元素组成的元组列表：
+dict1.items()
+
+返回由字典键组成的列表：
+dict1.keys()
+
+返回一个包含字典中所有值的列表
+dict1.values()
+
+返回字典的元素，返回的是个迭代器
+dict1.iteritems()
+
+返回字典的键值，返回的是个迭代器
+dict1.iterkeys()
+
+返回字典的值，返回的是个迭代器
+dict1.itervalues()
+
+
+删除值：
+删除字典中所有元素：
+dict1.clear()
+
+删除指定的元素，键不存在时，抛出异常
+dict.pop(key)
+
+
+连接字典
+将字典dict2的元素添加到dict1中：
+dict1.update(dict2)
+
+
+

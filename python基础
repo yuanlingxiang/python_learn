@@ -1,0 +1,80 @@
+python基础
+
+1、为什么不需要事先声明变量
+解释器会根据赋值号右侧的对象获取对象的类型
+
+2、引用计数
+对象被引用的次数
+
+3、数据类型：
+标准类型：
+int, float, complex, bool, str, 列表，字典，元组
+其他类型：
+类，方法，函数，NoneType，集合，文件类型，模块
+
+4、工厂函数
+int(), long(), float(), complex()
+str(), unicode()
+list(), tuple()
+type()
+
+
+dict()
+bool()
+set(), frozenset()
+object()
+classmethod()
+staticmethod()
+super()
+property()
+file()
+
+5、可调用对象
+可用callable(obj)判断进行判断，返回bool值
+
+
+6、执行对象
+compile()
+编译代码为代码对象
+
+例子：
+compile(arg1, arg2, arg3)
+arg1：编译的代码对象
+arg2：一个空字符串，用于表示代码对象的名字
+arg3：三个可能值
+如果arg1是表达式，则取eval
+如果arg1是单一可执行语句，则取exec
+如果arg1是语句块，则取exec
+
+
+exec
+可用于执行python代码，返回执行结果
+可用于执行文件对象：
+f = open(path)
+exec f
+
+eval:
+用于对表达式求值或者执行python字符串
+
+execfile()
+可以用于执行python文件，并自动关闭
+
+os.system()
+执行系统命令，如：
+os.system('dir')
+结果立即打印打屏幕上
+返回状态：0表示成功，1表示失败
+
+
+os.popen()
+用于执行系统命令，不显示返回结果，返回文件对象
+f = os.popen(系统命令)
+
+
+
+
+
+
+
+
+

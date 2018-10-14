@@ -1,0 +1,180 @@
+1、os模块
+____________________________________________________________________________
+文件处理
+删除文件：
+os.remove(path1)
+os.unlink(path1)
+
+重命名文件：
+os.rename(src, dst)
+os.renames(old, new)
+
+返回文件信息：
+os.stat(path)
+
+
+更新时间戳:
+os.utime(path, times)
+times不设置则为当前的访问和修改时间
+times设置是一个 (atime, mtime)元组
+
+
+以(w+b)模式创建并打开一个新的临时文件
+os.tmpfile(path)
+
+遍历目录:
+os.walk(path)：返回一个迭代器，迭代后，每个元素由根目录，文件夹，文件构成
+
+____________________________________________________________________________
+目录、文件加夹：
+改变当前工作目录，返回bool值：
+os.chdir(path)
+
+通过文件描述符改变工作目录：
+os.fchdir(fd)：fd为文件描述符
+
+改变当前进程的根目录：
+os.chroot(path)
+
+以列表形式，列出指定目录的文件：
+os.listdir()
+
+返回当前工作目录
+getcwd()
+getcwdu()：返回的是个unicode对象
+
+创建目录
+os.mkdir()
+
+创建多层目录
+os.makedirs()
+
+删除一个空文件夹
+os.rmdir()
+
+用递归方式删除多个空文件夹：
+os.removedirs()
+____________________________________________________________________________
+
+访问/权限：
+检验权限模式，返回bool值：
+os.access(path, mode)
+mode=os.F_OK:测试是否存在
+mode=os.R_OK:测试是否可读
+mode=os.W_OK:测试path是否可写
+mode=os.X_OK:测试path是否可执行
+
+改变权限模式：
+chmod(path, mode)
+
+更改文件所有者,仅用在Unix
+chown(path, uid, gid))
+path -- 设置权限的文件路径
+uid -- 所属用户 ID
+gid -- 所属用户组 ID
+
+lchown():不会跟踪链接：
+
+设置默认权限模式：
+os.umask()
+
+文件描述符操作：
+复制文件描述符号
+os.dup(fd)
+
+将一个文件描述符 fd 复制到另一个 fd2
+os.dup2(fd, fd2)
+
+用于打开一个文件
+os.open(path)
+
+根据文件描述符读取
+os.read(fd)
+
+根据文件描述符写入
+os.write(fd)
+
+从 major 和 minor 设备号创建一个原始设备号
+os.makedev()
+
+从原始设备号获得 major设备号
+os.major()
+从原始设备号获得 minor 设备号
+os.minor()
+
+____________________________________________________________________________
+其他：
+创建命名管道，没有返回值:
+os.mkfifo()
+
+创建文件系统节点，没有返回值：
+os.mknod()
+
+创建符号链接
+os.symlink(src, dst)
+
+
+2、os.path模块
+____________________________________________________________________________
+文件信息：
+path1为文件路径
+
+返回文件名：
+os.path.basename(path1) 
+
+返回文件大小(以字节为单位)
+os.path.getsize(path1) 
+
+____________________________________________________________________________
+路径信息：
+返回文件路径：
+os.path.dirname(path1) 
+
+连接路径和文件
+os.path.join(path1, path2)
+
+判断
+返回bool值
+
+指定路径是否存在
+os.path.exists(path) 
+
+指定路径是否为绝对路径
+os.path.isabs(path) 
+
+指定路径是否存在且为一个目录
+os.path.isdir(path) 
+
+指定路径是否存在且为一个文件
+os.path.isfile(path)
+
+指定路径是否存在且为一个符号链接
+os.path.islink() 
+
+指定路径是否存在且为一个挂载点
+os.path.ismount() 
+
+两个路径名是否指向同个文件
+os.path.samefile() 
+
+____________________________________________________________________________
+拆分
+将路径和文件以元组形式返回
+os.path.split(path) 
+
+将文件的根目录和剩余部分以元组形式返回
+os.path.splitdrive() 
+
+将文件的扩展名和剩余部分以元组形式返回
+os.path.splitext() 
+
+____________________________________________________________________________
+返回文件时间属性
+返回最近访问时间，返回时间戳
+os.path.getatime(file1) 返回最近访问时间
+
+返回文件创建时间，返回时间戳
+os.path.getctime(file1) 
+
+返回最近文件修改时间，返回时间戳
+os.path.getmtime(file1) 
