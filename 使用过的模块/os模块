@@ -6,8 +6,8 @@ os.remove(path1)
 os.unlink(path1)
 
 重命名文件：
-os.rename(src, dst)
-os.renames(old, new)
+os.rename(src, dst)  #仅能重命名文件或目录
+os.renames(old, new) #能重命名文件或目录，还可以重命名上级目录
 
 返回文件信息：
 os.stat(path)

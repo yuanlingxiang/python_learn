@@ -1,10 +1,21 @@
 json模块
 将python对象编码为json:
-json.dump(str1)
-
+json.dumps(str1)
 
 将json解码为python对象
-json.load(jsonobj)
+json.loads(jsonobj)
+
+例子如下：
+import json
+#json转换为字符串
+json1 = '{"a":1, "b":2}'
+a = json.loads(json1)
+print a['a']
+
+#字符串编码为json
+data = [{'a': 1, 'b': 2, 'c': 3,'d': 4,'e': 5}]
+b = json.dumps(data)
+print b
 
 
 
