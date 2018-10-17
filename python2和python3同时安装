@@ -1,0 +1,15 @@
+1、同时安装python2和python3时
+将python2和python3的路径添加到环境变量
+修改python.exe为python2.exe和python3.exe
+
+启动python2：命令行输入python2
+启动python3：命令行输入python3
+
+使用pip命令时注意：
+
+python3安装包使用命令
+python3 -m pip install 包名
+
+python2安装包使用命令
+python2 -m pip install 包名
+
