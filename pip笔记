@@ -8,6 +8,8 @@ pip list --outdated
 更新包名
 pip install --upgrade 库名 
 
+卸载包
+pip uninstall 包名
 
 一次性更新所有的过期包
 pip install pip-review
