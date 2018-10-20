@@ -45,6 +45,79 @@ frame[列名] = 'xxx'
 ___________________________________________________________
 5、转置
 frame.T
+___________________________________________________________
+6、设置frame的列名和行名
+frame.columns.name = 'xx'
+frame.index.name = 'xx'
+___________________________________________________________
+7、获取frame的值
+frame.values：以二维数组返回frame的值
+___________________________________________________________
+8、索引对象：索引对象是不可修改的
+
+索引对象的方法和属性
+a = frame1.index   frame1的索引对象
+b = frame2.index   frame2的索引对象
+
+a.append(b):连接两个索引对象
+a.difference(b)：计算差集
+a.intersection(b)：计算交集
+a.uion(b)：计算并集
+a.isin(b)：返回bool数组，计算a有那些包含在b中
+a.delete(i)：删除索引i处索引，得到一个新Index；i可以是一个索引对象或列表
+a.drop(i)：删除索引i处索引，得到一个新Index；i可以是一个索引对象或列表
+a.insert(i, index):在a的第i处索引插入index；i可以是一个索引对象或列表
+a.is_monotonic：当各元素均大于前一个元素时，返回True
+a.is_unique：当a中的索引没有重复值，返回True
+a.unique()：计算a的唯一值索引组
+___________________________________________________________
+9、重新索引：不会影响原始视图
+
+方法1：
+frame.reindex(index, method, columns):按指定的行列显示frame
+index：行索引列表
+columns：列索引列表
+method：ffill(前向填充)或bfill(后向填充)
+
+例子：
+frame = DataFrame(np.arange(16).reshape(4, 4))
+frame.reindex(index=[2, 3, 1, 0], columns=[3, 2, 1, 0])
+___________________________________________________________
+方法2：
+frame = DataFrame(np.arange(16).reshape(4, 4))
+frame1.ix[index, columns]
+
+例子：
+frame.ix[[1,2,3,0], [1, 2, 3,0]]
+___________________________________________________________
+reindex参数：
+fill_value：填入NAN中的值
+limit：前向后向填充的最大量
+level：在Multiindex的指定级别上匹配简单索引，否则选取其子集
+copy:默认True，无论如何都复制；如果False，则新旧相等就不复制
+
+例子：
+frame = DataFrame(np.arange(16).reshape(4, 4))
+frame.reindex([1,2,3,4,5,6], fill_value='a', method='bfill',limit=2)
+___________________________________________________________
+10、丢弃指定的元素：返回丢弃后的frame，不会影响原始视图
+
+丢弃指定行，index可以为单个行索引或行索引组成的列表
+frame.drop(index)
+
+例子：
+frame = DataFrame(np.arange(16).reshape(4, 4))
+frame.drop([0, 2])  丢弃第0,2行的值
+
+丢弃指定列，columns可以为单个列索引或列索引组成的列表
+frame.drop(columns, axis=1)
+
+例子：
+frame = DataFrame(np.arange(16).reshape(4, 4))
+frame.drop([0, 2], axis=1)  丢弃第0,2列的值
+___________________________________________________________
+11、索引
+
 
 
 
