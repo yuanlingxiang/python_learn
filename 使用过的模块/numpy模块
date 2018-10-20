@@ -113,21 +113,21 @@ arr.transpose((1, 0, 2))   #适用于高维度数组
 arr.swapaxes(1, 2)      #适用于高维度数组
 ________________________________________________________________
 10、一元运算函数
-np.sqrt(arr)
-np.abs(arr)
-np.square(arr)
-np.exp(arr)
-np.log(arr)
-np.log10(arr)
-np.log2(arr)
-np.log1p(arr)
-np.sign(arr)
-np.ceil(arr)
-np.floor(arr)
-np.rint(arr)
-np.modf(arr)
-np.isnan(arr)
-np.cos(arr)
+np.sqrt(arr):元素级开方
+np.abs(arr)：元素绝对值
+np.square(arr)：元素平方
+np.exp(arr)：元素的指数
+np.log(arr)：元素的对数
+np.log10(arr)：元素的对数
+np.log2(arr)：元素的对数
+np.log1p(arr)：元素的对数
+np.sign(arr)：元素的正负号
+np.ceil(arr)：大于等于元素的最小整数
+np.floor(arr)：小于等于元素的最大整数
+np.rint(arr)：四舍五入到最接近的最小整数
+np.modf(arr)：将元素的整数和小数分别作为两个数组返回
+np.isnan(arr)：返回那些值是NAN的bool型数组
+np.cos(arr)：
 np.cosh(arr)
 np.sin(arr)
 np.sinh(arr)
@@ -139,7 +139,39 @@ np.arcsin(arr)
 np.arcsinh(arr)
 np.arctan(arr)
 np.arctanh(arr)
-np.logcal_not(arr)
+np.logcal_not(arr)：计算元素的逻辑非
+
+二元运算函数
+np.add(arr1, arr2)
+np.subtract(arr1, arr2)
+np.multiply(arr1, arr2)
+np.divide(arr1, arr2)
+np.floor_divide(arr1, arr2):元素间相除，丢弃余数
+np.pow(arr1, arr2):幂运算
+np.maximum(arr1, arr2)：元素间最大值组成的数组
+np.fmax(arr1, arr2)：元素间最大值组成的数组，忽略NaN
+np.minimum(arr1, arr2)：元素间最小值组成的数组
+np.fmin(arr1, arr2)：元素间最小值组成的数组，忽略NaN
+np.mod(arr1, arr2)：元素级求莫运算
+np.copysign(arr1, arr2)：将第二个数组值的符号，赋值给第一个数组中的值
+np.greater(arr1, arr2)：元素级>计算，返回bool数组
+np.greater_equal(arr1, arr2)：元素级>=计算，返回bool数组
+np.less(arr1, arr2)：元素级<计算，返回bool数组
+np.less_equal(arr1, arr2)：元素级<=计算，返回bool数组
+np.equal(arr1, arr2)：元素级等于计算，返回bool数组
+np.not_equal(arr1, arr2)：元素级不等于计算，返回bool数组
+np.logical_and(arr1, arr2)：元素级逻辑与运算
+np.logical_or(arr1, arr2)：元素级逻辑或运算
+np.logical_xor(arr1, arr2)：元素级逻辑异或运算
+
+________________________________________________________________
+11、np.where(cond, arr1, arr2):
+cond：为bool数组
+结果：cond元素为True时，选择对应的arr1中的元素，否则选择arr2中的元素
+arr1和arr2可以是标量
+
+
+
 
 
 
