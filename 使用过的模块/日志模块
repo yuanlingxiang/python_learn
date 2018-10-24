@@ -1,0 +1,47 @@
+1、基础部分
+
+python中记录日志的模块logging
+解释器默认打印日级别:
+logging.warning()
+logging.error()
+logging.critical()
+中的信息
+_________________________________________________________________
+指定日志输出格式
+logging.basicConfig(filename='myapp.log', 
+					filemode='w',
+					level=logging.INFO, 
+					format='%(asctime)s%(levelname)s:%(message)s',
+					datefmt='%Y-%m-%d %H:%M:%S')
+					
+filename：日志记录文件
+level：记录的日志等级
+format：日志的显示格式
+datefmt：时间显示格式
+filemode:每次都覆盖之前的日志，如果不设置，则每次日志都追加到原来日志后面
+
+记录的日志格式：
+2018-10-24 21:45:39 INFO:日志信息	
+_________________________________________________________________
+举例：
+记录多个模块日志
+#myapp.py
+import logging
+import mylib
+
+def main():
+	logging.basicConfig(filename='myapp.log', level=logging.INFO)
+	logging.info('Started')
+	mylib.do_something()
+	logging.info('Finished')
+	
+if __name__ == '__main__':
+	main()
+	
+#mylib.py
+import logging
+
+def do_something():
+    logging.info('Doing something')
+_________________________________________________________________
+
