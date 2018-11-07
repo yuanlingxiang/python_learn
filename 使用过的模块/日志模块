@@ -44,4 +44,9 @@ import logging
 def do_something():
     logging.info('Doing something')
 _________________________________________________________________
+2、高级部分
+记录器：
+处理器：
+过滤器：
+
 

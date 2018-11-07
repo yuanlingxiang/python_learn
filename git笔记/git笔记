@@ -1,0 +1,129 @@
+安装
+1，运行git.exe
+2，右键打开bash，配置用户名和密码
+git config --global user.name "your name"
+git config --global user.email "email@example.com"
+______________________________________________________
+基本操作：
+mkdir learngit
+cd learngit
+git init
+
+添加文件到仓库
+git add readme.txt
+git commit -m "wrote a readme file"
+
+查看仓库状态
+git status
+
+查看变化
+git diff readme.txt
+
+查看历史记录
+git log
+
+回退到上个版本
+git reset --hard HEAD^
+
+回退到上上个版本
+git reset --hard HEAD^^
+
+查看命令记录
+git reflog
+
+______________________________________________________
+还原工作区
+
+修改未添加情况
+git checkout -- readme.txt
+修改已添加情况
+git reset HEAD readme.txt
+git checkout -- readme.txt
+______________________________________________________
+删除文件
+git rm readme.txt
+______________________________________________________
+恢复删除文件
+git checkout -- readme.txt
+
+______________________________________________________
+远程仓库
+
+创建SSH KEY
+ssh-keygen -t rsa -C "youremail@example.com"
+
+用户目录下生成.ssh文件夹，其中包括
+id_rsa(私钥)
+id_rsa.pub(公钥)
+两个文件
+
+注意：github上设置的是公钥
+
+______________________________________________________
+远程同步本地仓库
+git remote add origin git@github.com:GitHub账户名/learngit.git
+______________________________________________________
+推送
+初次推送
+git push -u origin master
+
+不是初次推送
+git push origin master
+______________________________________________________
+克隆仓库
+git clone git@github.com:GitHub账户名/gitskills.git
+
+______________________________________________________
+分支：
+dev：分支名
+
+创建切换分支
+git checkout -b dev
+
+创建dev分支
+git branch dev
+
+切换到dev分支
+git checkout dev
+
+查看当前分支
+git branch
+
+合并dev到当前分支
+git merge dev
+
+删除dev分支
+git branch -d dev	
+______________________________________________________
+冲突
+解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交
+用git log --graph命令可以看到分支合并图
+
+______________________________________________________
+stash
+
+暂存当前内容
+git stash 
+
+恢复暂存内容
+git stash pop
+或者
+git stash apply stash@{0}
+
+查看暂存
+git stash list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
