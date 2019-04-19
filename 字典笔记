@@ -25,6 +25,8 @@ dict1 = {}
 
 方法2：接收一个列表或者元组，里面的每个元素一对值
 dict1 = dict(list1[, tuple])
+如：
+dict1 = dict([('a', 1), ('b', 2)])
 
 方法3：seq里面的参数作为字典的键值， arg2为值
 dict1 = dict.fromkeys(seq, arg2)
@@ -75,12 +77,20 @@ dict1.itervalues()
 dict1.clear()
 
 删除指定的元素，键不存在时，抛出异常
-dict.pop(key)
+dict1.pop(key):返回键对应的值
+del dict1(key):没有返回值
+
+删除指定的元素，键不存在时，抛出异常，返回键对应的值
+
 
 
 连接字典
 将字典dict2的元素添加到dict1中：
 dict1.update(dict2)
+
+
+更新值：
+d[key] = xx:如果key为新的，这键值对添加到字段中；如果存在，则更新原键的值
 
 
 
