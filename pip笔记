@@ -14,3 +14,11 @@ pip uninstall 包名
 一次性更新所有的过期包
 pip install pip-review
 pip-review --local --interactive
+
+一个系统中存在python2，python3时，pip使用方法
+安装：
+python2: python2 -m pip install xx
+python3: python3 -m pip install xx
+卸载：
+python2: python2 -m pip uninstall xx
+python3: python3 -m pip uninstall xx
