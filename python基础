@@ -146,6 +146,7 @@ random.uniform(a, b)：返回[a, b)之间的浮点数
 random.random()：返回[0, 1]之间的浮点数
 random.randrange(a, b)：随机返回[a, b]直接的一个数
 
+111
 
 
 
